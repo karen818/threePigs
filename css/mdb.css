@@ -2228,7 +2228,7 @@
 }
 
 .primary-color {
-  background-color: #4285F4 !important;
+  background-color: #496DDB; !important;
 }
 
 .primary-color-dark {
@@ -6865,7 +6865,7 @@ button:focus {
 }
 
 .btn-primary {
-  background: #4285F4;
+  background: #496DDB;
   color: #fff !important;
 }
 
@@ -7734,7 +7734,7 @@ textarea.md-textarea {
 }
 
 i.btn-primary {
-  background: #4285F4 !important;
+  background: #496DDB; !important;
 }
 
 i.btn-default {

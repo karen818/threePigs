@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="pigsApp">
   <head>
 
     <meta charset="utf-8">
@@ -20,8 +20,13 @@
     <!-- Your custom styles (optional) -->
     <link href="css/style.css" rel="stylesheet">
 
+    <!-- angular script -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js"></script>
+    <!-- angular animate script -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.js"></script>
+
   </head>
-  <body>
+  <body ng-controller="banksController">
     <!--Navbar-->
   <nav class="navbar navbar-dark bg-primary">
       <!-- Collapse button-->
@@ -34,14 +39,11 @@
         <!--Collapse content-->
         <div class="collapse navbar-toggleable-xs" id="collapseEx2">
             <!--Navbar Brand-->
-            <a class="navbar-brand" href="#">3 Lil' Pigs</a>
+            <a class="navbar-brand" href="#">3 Li'l Pigs</a>
             <!--Links-->
             <ul class="nav navbar-nav navbar-right">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">My Banks <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Parent Dashboard</a>
+                    <a class="nav-link" href="#login">Log In <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">About</a>
@@ -53,7 +55,7 @@
   </nav>
 
     <section class="banks">
-        <h1 class="bigger-font">Sara's Piggy Banks</h1>
+        <h1 class="bigger-font" ng-model="firstName">{{firstName}}'s Piggy Banks</h1>
         <div class="container">
         <div class="row">
           <div class="flex-center col-sm-12 col-md-4">
@@ -69,7 +71,7 @@
                   <h2 class="card-title animated fadeIn">Dreams</h2>
                   <h4>Go on Safari</h4>
                   <!--Text-->
-                  <h1 class="money">$8.25</h1>
+                  <h1 class="money">$2.25</h1>
                   <a href="#dreams" class="btn btn-primary flex-center">See more about my dream</a>
               </div>
             </div>
@@ -88,7 +90,7 @@
                   <h2 class="card-title animated fadeIn">Goals</h2>
                   <h4>Donate to Animal Shelter</h4>
                   <!--Text-->
-                    <h1 class="money">$10.50</h1>
+                    <h1 class="money">$5.75</h1>
                   <a href="#goals" class="btn btn-primary flex-center">See more about my goal</a>
               </div>
             </div>
@@ -107,7 +109,7 @@
                   <h2 class="card-title animated fadeIn">Wants</h2>
                   <h4>New iPhone</h4>
                   <!--Text-->
-                    <h1 class="money">$4.00</h1>
+                    <h1 class="money" ng-model="wantBalance">$0.25</h1>
                   <a href="#wants" class="btn btn-primary flex-center">See more about my want</a>
               </div>
             </div>
@@ -119,7 +121,7 @@
       <div class="container">
         <div class="row">
           <h1>Dreams Bank</h1>
-          <h3 class="center-text">I want to go on a safari in Africa!</h3>
+          <h3 class="center-text" ng-model="dreamText">{{dreamText}}</h3>
           <div class="flex-center col-sm-12 col-md-3">
             <img src="img/piggy.png" class="img-fluid purple" alt="piggy bank graphic" />
           </div>
@@ -138,32 +140,26 @@
                 <tr>
                   <th scope="row">8/18/2016</th>
                   <td>Started Saving</td>
-                  <td>- -</td>
+                  <td ng-model="dreamStartBalance">{{dreamStartBalance | currency}}</td>
                   <td>$0.00</td>
                 </tr>
                 <tr>
                   <th scope="row">8/21/2016</th>
                   <td>Saved Money instead of buying a Sprite</td>
-                  <td>+1.50</td>
-                  <td>$1.50</td>
-                </tr>
-                <tr>
-                  <th scope="row">8/30/2016</th>
-                  <td>Saved Money instead of buying movie popcorn</td>
-                  <td>+2.00</td>
-                  <td>$3.50</td>
+                  <td ng-model="dreamAdd">{{dreamAdd | currency}}</td>
+                  <td>{{dreamStartBalance + dreamAdd | currency}}</td>
                 </tr>
                 <tr>
                   <th scope="row">9/12/2016</th>
                   <td>Spent Money instead of saving it</td>
-                  <td>-1.00</td>
-                  <td>$2.50</td>
+                  <td>-$1.00</td>
+                  <td>{{dreamStartBalance + dreamAdd - 1.00 | currency}}</td>
                 </tr>
                 <tr>
                   <th scope="row">9/19/2016</th>
                   <td>Earned Interest on money I've saved</td>
-                  <td>+0.50</td>
-                  <td>$3.00</td>
+                  <td>0.25</td>
+                  <td>{{dreamStartBalance + dreamAdd - 1.00 + 0.25| currency}}</td>
                 </tr>
               </tbody>
             </table>
@@ -174,7 +170,7 @@
       <div class="container">
         <div class="row">
           <h1>Goals Bank</h1>
-          <h3 class="center-text">I want to give money to the animal shelter to help puppies and kitties!</h3>
+          <h3 class="center-text" ng-model="goalText">{{goalText}}</h3>
           <div class="flex-center col-sm-12 col-md-3">
             <img src="img/piggy.png" class="img-fluid green" alt="piggy bank graphic" />
           </div>
@@ -193,26 +189,26 @@
                 <tr>
                   <th scope="row">8/18/2016</th>
                   <td>Started Saving</td>
-                  <td>- -</td>
+                  <td ng-model="goalStartBalance">{{goalStartBalance | currency}}</td>
                   <td>$0.00</td>
                 </tr>
                 <tr>
                   <th scope="row">8/21/2016</th>
-                  <td>Saved Money instead of buying an app</td>
-                  <td>+1.50</td>
-                  <td>$1.50</td>
+                  <td>Saved Money instead of buying a Sprite</td>
+                  <td ng-model="goalAdd">{{goalAdd | currency}}</td>
+                  <td>{{goalStartBalance + goalAdd | currency}}</td>
                 </tr>
                 <tr>
-                  <th scope="row">8/30/2016</th>
-                  <td>Saved Money instead of getting a toy</td>
-                  <td>+2.00</td>
-                  <td>$3.50</td>
+                  <th scope="row">9/12/2016</th>
+                  <td>Spent Money instead of saving it</td>
+                  <td>-$1.00</td>
+                  <td>{{goalStartBalance + goalAdd - 1.00 | currency}}</td>
                 </tr>
                 <tr>
                   <th scope="row">9/19/2016</th>
                   <td>Earned Interest on money I've saved</td>
-                  <td>+0.50</td>
-                  <td>$4.00</td>
+                  <td>0.25</td>
+                  <td>{{goalStartBalance + goalAdd - 1.00 + 0.25| currency}}</td>
                 </tr>
               </tbody>
             </table>
@@ -223,7 +219,7 @@
       <div class="container">
         <div class="row">
           <h1>Wants Bank</h1>
-          <h3 class="center-text">I want the new iPhone!</h3>
+          <h3 class="center-text" ng-model="wantText">{{wantText}}</h3>
           <div class="flex-center col-sm-12 col-md-3">
             <img src="img/piggy.png" class="img-fluid blue" alt="piggy bank graphic" />
           </div>
@@ -242,20 +238,26 @@
                 <tr>
                   <th scope="row">8/18/2016</th>
                   <td>Started Saving</td>
-                  <td>$0.00</td>
+                  <td ng-model="wantStartBalance">{{wantStartBalance | currency}}</td>
                   <td>$0.00</td>
                 </tr>
                 <tr>
                   <th scope="row">8/21/2016</th>
-                  <td>Saved Money instead of getting movie candy</td>
-                  <td>+1.50</td>
-                  <td>$1.50</td>
+                  <td>Saved Money instead of buying a Sprite</td>
+                  <td ng-model="wantAdd">{{wantAdd | currency}}</td>
+                  <td>{{wantStartBalance + wantAdd | currency}}</td>
                 </tr>
                 <tr>
-                  <th scope="row">8/30/2016</th>
+                  <th scope="row">9/12/2016</th>
                   <td>Spent Money instead of saving it</td>
-                  <td>-1.00</td>
-                  <td>$0.50</td>
+                  <td>-$1.00</td>
+                  <td>{{wantStartBalance + wantAdd - 1.00 | currency}}</td>
+                </tr>
+                <tr>
+                  <th scope="row">9/19/2016</th>
+                  <td>Earned Interest on money I've saved</td>
+                  <td>0.25</td>
+                  <td>{{wantStartBalance + wantAdd - 1.00 + 0.25| currency}}</td>
                 </tr>
               </tbody>
             </table>
@@ -263,7 +265,96 @@
       </div>
     </section>
 
-    <section class="dashboard">
+    <section id="login">
+      <div class="container">
+        <div class="row">
+
+          <!--Form with header-->
+          <div class="card">
+              <div class="card-block">
+
+                  <!--Header-->
+                  <div class="form-header">
+                      <h3 class="center-text">Login</h3>
+                  </div>
+
+                  <!--Body-->
+                  <div class="md-form">
+                      <i class="fa fa-envelope prefix"></i>
+                      <input type="text" id="form2" class="form-control">
+                      <label for="form2">Your email</label>
+                  </div>
+
+                  <div class="md-form">
+                      <i class="fa fa-lock prefix"></i>
+                      <input type="password" id="form4" class="form-control">
+                      <label for="form4">Your password</label>
+                  </div>
+
+                  <div class="text-xs-center">
+                      <button class="btn btn-deep-purple">Login</button>
+                  </div>
+
+              </div>
+
+              <!--Footer-->
+              <div class="modal-footer">
+                  <div class="options">
+                      <p>Not a member? <a href="#">Sign Up</a></p>
+                      <p>Forgot <a href="#">Password?</a></p>
+                  </div>
+              </div>
+
+          </div>
+          <!--/Form with header-->
+
+        </div>
+      </div>
+
+    </section>
+
+
+    <section>
+
+      <!--Form with header-->
+      <div class="card">
+          <div class="card-block">
+
+              <!--Header-->
+              <div class="form-header blue-gradient">
+                  <h3><i class="fa fa-user"></i> Register:</h3>
+              </div>
+
+              <!--Body-->
+              <div class="md-form">
+                  <i class="fa fa-user prefix"></i>
+                  <input type="text" id="form3" class="form-control">
+                  <label for="form3">Your name</label>
+              </div>
+              <div class="md-form">
+                  <i class="fa fa-envelope prefix"></i>
+                  <input type="text" id="form2" class="form-control">
+                  <label for="form2">Your email</label>
+              </div>
+
+              <div class="md-form">
+                  <i class="fa fa-lock prefix"></i>
+                  <input type="password" id="form4" class="form-control">
+                  <label for="form4">Your password</label>
+              </div>
+
+              <div class="text-xs-center">
+                  <button class="btn btn-indigo">Sign up</button>
+                  <hr>
+                  <fieldset class="form-group">
+                      <input type="checkbox" id="checkbox1">
+                      <label for="checkbox1">Subscribe me to the newsletter</label>
+                  </fieldset>
+              </div>
+
+          </div>
+      </div>
+      <!--/Form with header-->
 
     </section>
 
@@ -280,6 +371,9 @@
 
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="js/mdb.min.js"></script>
+
+    <!-- my JavaScript -->
+    <script type="text/javascript" src="js/script.js"></script>
 
   </body>
 </html>

@@ -20,7 +20,7 @@ h2 {
 h3:after {
   display: flex;
   height: 2px;
-  background-color: #496DDB;;
+  background-color: #496DDB;
   content: " ";
   width: 200px;
   margin: 0 auto;
@@ -39,6 +39,7 @@ img {
 
 .bg-primary,
 .btn-primary {
+  background: #496DDB;
   background-color: #496DDB;
 }
 
