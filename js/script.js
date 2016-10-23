@@ -14,6 +14,8 @@ app.controller('banksController', function($scope) {
     $scope.goalAdd = 1.50;
     $scope.wantAdd = 1;
 
+    $scope.interest = 0.25;
+
     $scope.dreamBalance = 8.25;
     $scope.goalBalance = 10.75;
     $scope.wantBalance = 4.00;

@@ -40,7 +40,6 @@
           </ul>
         </div>
       </div>
-
   </nav>
 
     <section class="banks">
@@ -60,11 +59,9 @@
                 </a>
               </div>
               <div class="card-block">
-                  <!--Title-->
                   <h2 class="card-title animated fadeIn">Dreams</h2>
                   <h4>Go on Safari</h4>
-                  <!--Text-->
-                  <h1 class="money">$2.25</h1>
+                  <h1 class="money">$3.25</h1>
                   <a href="#dreams" class="btn btn-primary flex-center">See more about my dream</a>
               </div>
             </div>
@@ -79,11 +76,9 @@
               </div>
 
               <div class="card-block">
-                  <!--Title-->
                   <h2 class="card-title animated fadeIn">Goals</h2>
                   <h4>Donate to Animal Shelter</h4>
-                  <!--Text-->
-                    <h1 class="money">$5.75</h1>
+                    <h1 class="money">$6.75</h1>
                   <a href="#goals" class="btn btn-primary flex-center">See more about my goal</a>
               </div>
             </div>
@@ -98,11 +93,9 @@
               </div>
 
               <div class="card-block">
-                  <!--Title-->
                   <h2 class="card-title animated fadeIn">Wants</h2>
                   <h4>New iPhone</h4>
-                  <!--Text-->
-                    <h1 class="money" ng-model="wantBalance">$0.25</h1>
+                    <h1 class="money" ng-model="wantBalance">$1.25</h1>
                   <a href="#wants" class="btn btn-primary flex-center">See more about my want</a>
               </div>
             </div>
@@ -145,8 +138,8 @@
                 <tr>
                   <th scope="row">9/19/2016</th>
                   <td>Earned Interest on money I've saved</td>
-                  <td>0.25</td>
-                  <td>{{dreamStartBalance + dreamAdd + 0.25| currency}}</td>
+                  <td>{{interest | currency}}</td>
+                  <td>{{dreamStartBalance + dreamAdd + interest| currency}}</td>
                 </tr>
               </tbody>
             </table>
@@ -188,8 +181,8 @@
                 <tr>
                   <th scope="row">9/19/2016</th>
                   <td>Earned Interest on money I've saved</td>
-                  <td>0.25</td>
-                  <td>{{goalStartBalance + goalAdd + 0.25| currency}}</td>
+                  <td>{{interest | currency}}</td>
+                  <td>{{goalStartBalance + goalAdd + interest| currency}}</td>
                 </tr>
               </tbody>
             </table>
@@ -231,8 +224,8 @@
                 <tr>
                   <th scope="row">9/19/2016</th>
                   <td>Earned Interest on money I've saved</td>
-                  <td>0.25</td>
-                  <td>{{wantStartBalance + wantAdd + 0.25| currency}}</td>
+                  <td>{{interest | currency}}</td>
+                  <td>{{wantStartBalance + wantAdd + interest | currency}}</td>
                 </tr>
               </tbody>
             </table>
@@ -261,18 +254,13 @@
     <!-- Add money modal -->
     <div class="modal fade addMoney" tabindex="-1" role="dialog" aria-labelledby="addMoneyModal" aria-hidden="true">
       <div class="modal-dialog" role="document">
-        <!--Content-->
         <div class="modal-content">
-
-          <!--Header-->
           <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
               </button>
               <h3 class="center-text">Save for Later or Spend Now?</h3>
           </div>
-
-          <!--Body-->
           <div class="modal-body">
             <div class="md-form">
                 <input type="number" id="costOfItem" class="form-control">
@@ -291,7 +279,7 @@
             </div>
 
             <div class="text-xs-center">
-                <button class="btn btn-primary btn-lg">Save Money for Later!  <i class="fa fa-smile-o" aria-hidden="true"></button>
+                <button class="btn btn-primary btn-lg" data-dismiss="modal">Save Money for Later!</button>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary" data-dismiss="modal">Spend Money Now</button>
@@ -303,21 +291,16 @@
 
 
 
-      <!-- Modal Login -->
+      <!-- Login modal -->
       <div class="modal fade modal-ext" id="modal-login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
-          <!--Content-->
           <div class="modal-content">
-
-            <!--Header-->
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
                 <h3><i class="fa fa-user"></i> Login</h3>
             </div>
-
-            <!--Body-->
             <div class="modal-body">
               <div class="md-form">
                   <i class="fa fa-envelope prefix"></i>
@@ -331,11 +314,9 @@
                   <label for="form3">Your password</label>
               </div>
               <div class="text-xs-center">
-                  <button class="btn btn-primary btn-lg">Login</button>
+                  <button class="btn btn-primary btn-lg" data-dismiss="modal">Login</button>
               </div>
             </div>
-
-            <!--Footer-->
             <div class="modal-footer">
               <div class="options">
                   <p>Not a member? <a href="#">Sign Up</a></p>
@@ -343,19 +324,16 @@
               </div>
             </div>
           </div>
-            <!--/.Content-->
         </div>
       </div>
 
 
 
 
-        <!-- Modal Register -->
+        <!-- Setup banks modal -->
         <div class="modal fade modal-ext" id="modal-register" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
-                <!--Content-->
                 <div class="modal-content">
-                    <!--Header-->
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
@@ -363,7 +341,6 @@
                         <h3 class="center-text">Set Up Child's Banks</h3>
 
                     </div>
-                    <!--Body-->
                     <div class="modal-body">
                       <div class="md-form">
                           <i class="fa fa-user prefix"></i>
@@ -397,30 +374,20 @@
                       </div>
 
                       <div class="text-xs-center">
-                          <button class="btn btn-deep-purple">Start Banks</button>
+                          <button class="btn btn-deep-purple" data-dismiss="modal">Start Banks</button>
                       </div>
                     </div>
                 </div>
-                <!--/.Content-->
             </div>
         </div>
 
 
     <!-- SCRIPTS -->
 
-    <!-- JQuery -->
     <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
-
-    <!-- Bootstrap tooltips -->
     <script type="text/javascript" src="js/tether.min.js"></script>
-
-    <!-- Bootstrap core JavaScript -->
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
-
-    <!-- MDB core JavaScript -->
     <script type="text/javascript" src="js/mdb.min.js"></script>
-
-    <!-- my JavaScript -->
     <script type="text/javascript" src="js/script.js"></script>
 
   </body>
