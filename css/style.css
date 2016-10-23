@@ -65,7 +65,7 @@ img {
 section:after {
   display: block;
   height: 2px;
-  background-color: #496DDB;
+  background-color: #9fa8da;
   content: " ";
   width: 90%;
   margin: 0 auto;

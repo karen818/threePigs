@@ -8,51 +8,36 @@
 
     <title>Three Little Pigs</title>
 
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
-
-    <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Material Design Bootstrap -->
     <link href="css/mdb.min.css" rel="stylesheet">
-
-    <!-- Your custom styles (optional) -->
     <link href="css/style.css" rel="stylesheet">
 
-    <!-- angular script -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js"></script>
-    <!-- angular animate script -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.js"></script>
 
   </head>
   <body ng-controller="banksController">
-    <!--Navbar-->
   <nav class="navbar navbar-dark bg-primary">
-      <!-- Collapse button-->
       <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#collapseEx2">
           <i class="fa fa-bars"></i>
       </button>
 
       <div class="container">
-
-        <!--Collapse content-->
         <div class="collapse navbar-toggleable-xs" id="collapseEx2">
-            <!--Navbar Brand-->
-            <a class="navbar-brand" href="#about">About 3 Li'l Pigs</a>
-            <!--Links-->
-            <ul class="nav navbar-nav navbar-right">
-                <li class="nav-item">
-                  <button type="button" class="btn green" data-toggle="modal" data-target="#modal-login">
-                      Login
-                  </button>
-                </li>
-                <li class="nav-item">
-                  <button type="button" class="btn green" data-toggle="modal" data-target="#modal-register">
-                  Set Up Banks
-                  </button>
-                </li>
-            </ul>
+          <a class="navbar-brand" href="#about">About 3 Li'l Pigs</a>
+          <ul class="nav navbar-nav navbar-right">
+            <li class="nav-item">
+              <button type="button" class="btn green" data-toggle="modal" data-target="#modal-login">
+                  Login
+              </button>
+            </li>
+            <li class="nav-item">
+              <button type="button" class="btn green" data-toggle="modal" data-target="#modal-register">
+              Set Up Banks
+              </button>
+            </li>
+          </ul>
         </div>
       </div>
 
@@ -61,7 +46,7 @@
     <section class="banks">
         <h1 class="bigger-font" ng-model="firstName">{{firstName}}'s Piggy Banks</h1>
         <div class="flex-center">
-            <button type="button" name="addButton" class="btn btn-lg indigo" id="addBankButton">Add Money To My Bank  <i class="fa fa-smile-o" aria-hidden="true"></i></button>
+          <button type="button" name="addButton" class="btn btn-lg indigo" id="addBankButton" data-toggle="modal" data-target=".addMoney">Add Money To My Bank  <i class="fa fa-smile-o" aria-hidden="true"></i></button>
         </div>
         <div class="container">
 
@@ -69,10 +54,10 @@
           <div class="flex-center col-sm-12 col-md-4">
             <div class="card">
               <div class="view overlay hm-white-slight flex-center">
-                  <img src="img/piggy.png" class="img-fluid deep-purple" alt="piggy bank graphic"/>
-                  <a href="#dreams">
-                      <div class="mask"></div>
-                  </a>
+                <img src="img/piggy.png" class="img-fluid deep-purple" alt="piggy bank graphic"/>
+                <a href="#dreams">
+                    <div class="mask"></div>
+                </a>
               </div>
               <div class="card-block">
                   <!--Title-->
@@ -158,16 +143,10 @@
                   <td>{{dreamStartBalance + dreamAdd | currency}}</td>
                 </tr>
                 <tr>
-                  <th scope="row">9/12/2016</th>
-                  <td>Spent Money instead of saving it</td>
-                  <td>-$1.00</td>
-                  <td>{{dreamStartBalance + dreamAdd - 1.00 | currency}}</td>
-                </tr>
-                <tr>
                   <th scope="row">9/19/2016</th>
                   <td>Earned Interest on money I've saved</td>
                   <td>0.25</td>
-                  <td>{{dreamStartBalance + dreamAdd - 1.00 + 0.25| currency}}</td>
+                  <td>{{dreamStartBalance + dreamAdd + 0.25| currency}}</td>
                 </tr>
               </tbody>
             </table>
@@ -207,16 +186,10 @@
                   <td>{{goalStartBalance + goalAdd | currency}}</td>
                 </tr>
                 <tr>
-                  <th scope="row">9/12/2016</th>
-                  <td>Spent Money instead of saving it</td>
-                  <td>-$1.00</td>
-                  <td>{{goalStartBalance + goalAdd - 1.00 | currency}}</td>
-                </tr>
-                <tr>
                   <th scope="row">9/19/2016</th>
                   <td>Earned Interest on money I've saved</td>
                   <td>0.25</td>
-                  <td>{{goalStartBalance + goalAdd - 1.00 + 0.25| currency}}</td>
+                  <td>{{goalStartBalance + goalAdd + 0.25| currency}}</td>
                 </tr>
               </tbody>
             </table>
@@ -256,22 +229,77 @@
                   <td>{{wantStartBalance + wantAdd | currency}}</td>
                 </tr>
                 <tr>
-                  <th scope="row">9/12/2016</th>
-                  <td>Spent Money instead of saving it</td>
-                  <td>-$1.00</td>
-                  <td>{{wantStartBalance + wantAdd - 1.00 | currency}}</td>
-                </tr>
-                <tr>
                   <th scope="row">9/19/2016</th>
                   <td>Earned Interest on money I've saved</td>
                   <td>0.25</td>
-                  <td>{{wantStartBalance + wantAdd - 1.00 + 0.25| currency}}</td>
+                  <td>{{wantStartBalance + wantAdd + 0.25| currency}}</td>
                 </tr>
               </tbody>
             </table>
           </div>
       </div>
     </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 col-md-3">
+
+          </div>
+          <div class="col-sm-12 col-md-6">
+            <h1>About 3 Li'l Pigs</h1>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Add money modal -->
+    <div class="modal fade addMoney" tabindex="-1" role="dialog" aria-labelledby="addMoneyModal" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <!--Content-->
+        <div class="modal-content">
+
+          <!--Header-->
+          <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+              </button>
+              <h3 class="center-text">Save Money or Spend Money?</h3>
+          </div>
+
+          <!--Body-->
+          <div class="modal-body">
+            <div class="md-form">
+                <input type="number" id="costOfItem" class="form-control">
+                <label for="form2">Cost of item you want</label>
+            </div>
+
+            <div class="md-form">
+              <select class="browser-default">
+                <option value="" disabled selected>Choose the item from home</option>
+                <option value="soda">Soda (.25&cent;)</option>
+                <option value="candy">Candy ($1.00)</option>
+                <option value="iceCream">Ice Cream (.50&cent;)</option>
+                <option value="dessert">Dessert ($1.00)</option>
+                <option value="phoneApp">Phone App (free)</option>
+              </select>
+            </div>
+
+            <div class="text-xs-center">
+                <button class="btn btn-primary btn-lg">Save It!</button>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Don't Save</button>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+
 
 
       <!-- Modal Login -->
@@ -348,7 +376,7 @@
                           <label for="childPassword">Child's password</label>
                       </div>
                       <div class="">
-                        <h4 class="center-text">Allocate Amounts - must add up to 100%</h4>
+                        <h3 class="center-text">Allocate Amounts - must add up to 100%</h3>
                       </div>
 
                       <div class="md-form">
@@ -376,23 +404,6 @@
             </div>
         </div>
 
-
-
-    <section id="about">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12 col-md-3">
-
-          </div>
-          <div class="col-sm-12 col-md-6">
-            <h1>About 3 Li'l Pigs</h1>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <!-- SCRIPTS -->
 
