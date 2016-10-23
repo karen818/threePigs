@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-    <title>Three Little Pigs</title>
+    <title>3 Li'l Pigs</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -19,12 +19,12 @@
   </head>
   <body ng-controller="banksController">
   <nav class="navbar navbar-dark bg-primary">
-      <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#collapseEx2">
+      <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#collapseMenu">
           <i class="fa fa-bars"></i>
       </button>
 
       <div class="container">
-        <div class="collapse navbar-toggleable-xs" id="collapseEx2">
+        <div class="collapse navbar-toggleable-xs" id="collapseMenu">
           <a class="navbar-brand" href="#about">About 3 Li'l Pigs</a>
           <ul class="nav navbar-nav navbar-right">
             <li class="nav-item">
@@ -46,7 +46,7 @@
     <section class="banks">
         <h1 class="bigger-font" ng-model="firstName">{{firstName}}'s Piggy Banks</h1>
         <div class="flex-center">
-          <button type="button" name="addButton" class="btn btn-lg indigo" id="addBankButton" data-toggle="modal" data-target=".addMoney">Add Money To My Bank  <i class="fa fa-smile-o" aria-hidden="true"></i></button>
+          <button type="button" name="addButton" class="btn btn-lg indigo" id="addBankButton" data-toggle="modal" data-target=".addMoney">Make Your Decision</i></button>
         </div>
         <div class="container">
 
@@ -249,7 +249,8 @@
           <div class="col-sm-12 col-md-6">
             <h1>About 3 Li'l Pigs</h1>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              This is an idea from the imagination of Chrystie T. Nguyen. She wanted a way to teach her kids to learn the value of money and how delayed gratification can help them have more advantages in the future. Studies have found that children who delay gratification have higher SAT scores, lower levels of substance abuse, lower likelihood of obesity, better responses to stress, better social skills, and generally better scores in a range of other life measures.<br><br>
+              The project was created during the Women Who Code 2nd Annual Diversity Hackathon. The talents of Chrystie T. Nguyen, Kevin Conway, and Karen Kelly made this application possible and we all look forward to working on it more to make it a reality.
             </p>
           </div>
         </div>
@@ -268,7 +269,7 @@
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
               </button>
-              <h3 class="center-text">Save Money or Spend Money?</h3>
+              <h3 class="center-text">Save for Later or Spend Now?</h3>
           </div>
 
           <!--Body-->
@@ -290,10 +291,10 @@
             </div>
 
             <div class="text-xs-center">
-                <button class="btn btn-primary btn-lg">Save It!</button>
+                <button class="btn btn-primary btn-lg">Save Money for Later!  <i class="fa fa-smile-o" aria-hidden="true"></button>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary" data-dismiss="modal">Don't Save</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Spend Money Now</button>
             </div>
           </div>
       </div>
@@ -382,17 +383,17 @@
                       <div class="md-form">
                           <i class="fa fa-percent prefix"></i>
                           <input type="number" id="dreamPercent" class="form-control">
-                          <label for="dreamPercent">Percent to allocate to Dream Bank</label>
+                          <label for="dreamPercent">Percent to allocate to Dreams Bank</label>
                       </div>
                       <div class="md-form">
                           <i class="fa fa-percent prefix"></i>
                           <input type="number" id="goalPercent" class="form-control">
-                          <label for="goalPercent">Percent to allocate to Goal Bank</label>
+                          <label for="goalPercent">Percent to allocate to Goals Bank</label>
                       </div>
                       <div class="md-form">
                           <i class="fa fa-percent prefix"></i>
                           <input type="number" id="wantPercent" class="form-control">
-                          <label for="wantPercent">Percent to allocate to Want Bank</label>
+                          <label for="wantPercent">Percent to allocate to Wants Bank</label>
                       </div>
 
                       <div class="text-xs-center">
