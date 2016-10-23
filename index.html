@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-    <title>Material Design Bootstrap</title>
+    <title>Three Little Pigs</title>
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
@@ -21,21 +20,252 @@
     <!-- Your custom styles (optional) -->
     <link href="css/style.css" rel="stylesheet">
 
-</head>
+  </head>
+  <body>
+    <!--Navbar-->
+  <nav class="navbar navbar-dark bg-primary">
+      <!-- Collapse button-->
+      <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#collapseEx2">
+          <i class="fa fa-bars"></i>
+      </button>
 
-<body>
+      <div class="container">
 
-
-    <!-- Start your project here-->
-
-    <div style="height: 100vh">
-        <div class="flex-center">
-            <h1 class="animated fadeIn">Material Design for Bootstrap</h1>
+        <!--Collapse content-->
+        <div class="collapse navbar-toggleable-xs" id="collapseEx2">
+            <!--Navbar Brand-->
+            <a class="navbar-brand" href="#">3 Lil' Pigs</a>
+            <!--Links-->
+            <ul class="nav navbar-nav navbar-right">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">My Banks <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Parent Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+            </ul>
         </div>
-    </div>
+      </div>
 
-    <!-- /Start your project here-->
+  </nav>
 
+    <section class="banks">
+        <h1 class="bigger-font">Sara's Piggy Banks</h1>
+        <div class="container">
+        <div class="row">
+          <div class="flex-center col-sm-12 col-md-4">
+            <div class="card">
+              <div class="view overlay hm-white-slight flex-center">
+                  <img src="img/piggy.png" class="img-fluid purple" alt="piggy bank graphic"/>
+                  <a href="#dreams">
+                      <div class="mask"></div>
+                  </a>
+              </div>
+              <div class="card-block">
+                  <!--Title-->
+                  <h2 class="card-title animated fadeIn">Dreams</h2>
+                  <h4>Go on Safari</h4>
+                  <!--Text-->
+                  <h1 class="money">$8.25</h1>
+                  <a href="#dreams" class="btn btn-primary flex-center">See more about my dream</a>
+              </div>
+            </div>
+          </div>
+          <div class="flex-center col-sm-12 col-md-4">
+            <div class="card">
+              <div class="view overlay hm-white-slight flex-center">
+                  <img src="img/piggy.png" class="img-fluid green" alt="piggy bank graphic" />
+                  <a href="#goals">
+                      <div class="mask"></div>
+                  </a>
+              </div>
+
+              <div class="card-block">
+                  <!--Title-->
+                  <h2 class="card-title animated fadeIn">Goals</h2>
+                  <h4>Donate to Animal Shelter</h4>
+                  <!--Text-->
+                    <h1 class="money">$10.50</h1>
+                  <a href="#goals" class="btn btn-primary flex-center">See more about my goal</a>
+              </div>
+            </div>
+          </div>
+          <div class="flex-center col-sm-12 col-md-4">
+            <div class="card">
+              <div class="view overlay hm-white-slight flex-center">
+                  <img src="img/piggy.png" class="img-fluid blue" alt="piggy bank graphic"/>
+                  <a href="#wants">
+                      <div class="mask"></div>
+                  </a>
+              </div>
+
+              <div class="card-block">
+                  <!--Title-->
+                  <h2 class="card-title animated fadeIn">Wants</h2>
+                  <h4>New iPhone</h4>
+                  <!--Text-->
+                    <h1 class="money">$4.00</h1>
+                  <a href="#wants" class="btn btn-primary flex-center">See more about my want</a>
+              </div>
+            </div>
+          </div>
+      </div>
+    </section>
+
+    <section id="dreams">
+      <div class="container">
+        <div class="row">
+          <h1>Dreams Bank</h1>
+          <h3 class="center-text">I want to go on a safari in Africa!</h3>
+          <div class="flex-center col-sm-12 col-md-3">
+            <img src="img/piggy.png" class="img-fluid purple" alt="piggy bank graphic" />
+          </div>
+
+          <div class="flex-center col-sm-12 col-md-7 col-md-offset-2">
+            <table class="table">
+              <thead class="thead-inverse">
+                <tr>
+                  <th>Date</th>
+                  <th>What I Did</th>
+                  <th>How Much</th>
+                  <th>Total</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">8/18/2016</th>
+                  <td>Started Saving</td>
+                  <td>- -</td>
+                  <td>$0.00</td>
+                </tr>
+                <tr>
+                  <th scope="row">8/21/2016</th>
+                  <td>Saved Money instead of buying a Sprite</td>
+                  <td>+1.50</td>
+                  <td>$1.50</td>
+                </tr>
+                <tr>
+                  <th scope="row">8/30/2016</th>
+                  <td>Saved Money instead of buying movie popcorn</td>
+                  <td>+2.00</td>
+                  <td>$3.50</td>
+                </tr>
+                <tr>
+                  <th scope="row">9/12/2016</th>
+                  <td>Spent Money instead of saving it</td>
+                  <td>-1.00</td>
+                  <td>$2.50</td>
+                </tr>
+                <tr>
+                  <th scope="row">9/19/2016</th>
+                  <td>Earned Interest on money I've saved</td>
+                  <td>+0.50</td>
+                  <td>$3.00</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+      </div>
+    </section>
+    <section id="goals">
+      <div class="container">
+        <div class="row">
+          <h1>Goals Bank</h1>
+          <h3 class="center-text">I want to give money to the animal shelter to help puppies and kitties!</h3>
+          <div class="flex-center col-sm-12 col-md-3">
+            <img src="img/piggy.png" class="img-fluid green" alt="piggy bank graphic" />
+          </div>
+
+          <div class="flex-center col-sm-12 col-md-7 col-md-offset-2">
+            <table class="table">
+              <thead class="thead-inverse">
+                <tr>
+                  <th>Date</th>
+                  <th>What I Did</th>
+                  <th>How Much</th>
+                  <th>Total</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">8/18/2016</th>
+                  <td>Started Saving</td>
+                  <td>- -</td>
+                  <td>$0.00</td>
+                </tr>
+                <tr>
+                  <th scope="row">8/21/2016</th>
+                  <td>Saved Money instead of buying an app</td>
+                  <td>+1.50</td>
+                  <td>$1.50</td>
+                </tr>
+                <tr>
+                  <th scope="row">8/30/2016</th>
+                  <td>Saved Money instead of getting a toy</td>
+                  <td>+2.00</td>
+                  <td>$3.50</td>
+                </tr>
+                <tr>
+                  <th scope="row">9/19/2016</th>
+                  <td>Earned Interest on money I've saved</td>
+                  <td>+0.50</td>
+                  <td>$4.00</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+      </div>
+    </section>
+    <section id="wants">
+      <div class="container">
+        <div class="row">
+          <h1>Wants Bank</h1>
+          <h3 class="center-text">I want the new iPhone!</h3>
+          <div class="flex-center col-sm-12 col-md-3">
+            <img src="img/piggy.png" class="img-fluid blue" alt="piggy bank graphic" />
+          </div>
+
+          <div class="flex-center col-sm-12 col-md-7 col-md-offset-2">
+            <table class="table">
+              <thead class="thead-inverse">
+                <tr>
+                  <th>Date</th>
+                  <th>What I Did</th>
+                  <th>How Much</th>
+                  <th>Total</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">8/18/2016</th>
+                  <td>Started Saving</td>
+                  <td>$0.00</td>
+                  <td>$0.00</td>
+                </tr>
+                <tr>
+                  <th scope="row">8/21/2016</th>
+                  <td>Saved Money instead of getting movie candy</td>
+                  <td>+1.50</td>
+                  <td>$1.50</td>
+                </tr>
+                <tr>
+                  <th scope="row">8/30/2016</th>
+                  <td>Spent Money instead of saving it</td>
+                  <td>-1.00</td>
+                  <td>$0.50</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+      </div>
+    </section>
+
+    <section class="dashboard">
+
+    </section>
 
     <!-- SCRIPTS -->
 
@@ -51,7 +281,5 @@
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="js/mdb.min.js"></script>
 
-
-</body>
-
+  </body>
 </html>
