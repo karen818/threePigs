@@ -5,8 +5,12 @@ body {
   background-color: #F9FBF9;
 }
 
+button.btn {
+  border-radius: 50px;
+}
+
 h1 {
-  color: #582a72;
+  color: #512da8;
   font-family: 'Rancho', cursive;
   font-size: 3em;
   padding-bottom: 20px;
@@ -69,14 +73,6 @@ section:after {
   margin-bottom: 50px;
 }
 
-
-/*background colors*/
-.purple {
-  background-color: #582a72;
-}
-.green {
-  background-color: #45AF00;
-}
-.blue {
-  background-color: #496DDB;
+#addBankButton {
+  margin-bottom: 40px;
 }

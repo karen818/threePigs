@@ -39,17 +39,18 @@
         <!--Collapse content-->
         <div class="collapse navbar-toggleable-xs" id="collapseEx2">
             <!--Navbar Brand-->
-            <a class="navbar-brand" href="#">3 Li'l Pigs</a>
+            <a class="navbar-brand" href="#about">About 3 Li'l Pigs</a>
             <!--Links-->
             <ul class="nav navbar-nav navbar-right">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#login">Log In <span class="sr-only">(current)</span></a>
+                <li class="nav-item">
+                  <button type="button" class="btn green" data-toggle="modal" data-target="#modal-login">
+                      Login
+                  </button>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#setup">Set Up Banks</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#about">About</a>
+                  <button type="button" class="btn green" data-toggle="modal" data-target="#modal-register">
+                  Set Up Banks
+                  </button>
                 </li>
             </ul>
         </div>
@@ -59,12 +60,16 @@
 
     <section class="banks">
         <h1 class="bigger-font" ng-model="firstName">{{firstName}}'s Piggy Banks</h1>
+        <div class="flex-center">
+            <button type="button" name="addButton" class="btn btn-lg indigo" id="addBankButton">Add Money To My Bank  <i class="fa fa-smile-o" aria-hidden="true"></i></button>
+        </div>
         <div class="container">
+
         <div class="row">
           <div class="flex-center col-sm-12 col-md-4">
             <div class="card">
               <div class="view overlay hm-white-slight flex-center">
-                  <img src="img/piggy.png" class="img-fluid purple" alt="piggy bank graphic"/>
+                  <img src="img/piggy.png" class="img-fluid deep-purple" alt="piggy bank graphic"/>
                   <a href="#dreams">
                       <div class="mask"></div>
                   </a>
@@ -101,7 +106,7 @@
           <div class="flex-center col-sm-12 col-md-4">
             <div class="card">
               <div class="view overlay hm-white-slight flex-center">
-                  <img src="img/piggy.png" class="img-fluid blue" alt="piggy bank graphic"/>
+                  <img src="img/piggy.png" class="img-fluid indigo" alt="piggy bank graphic"/>
                   <a href="#wants">
                       <div class="mask"></div>
                   </a>
@@ -126,7 +131,7 @@
           <h1>Dreams Bank</h1>
           <h3 class="center-text" ng-model="dreamText">{{dreamText}}</h3>
           <div class="flex-center col-sm-12 col-md-3">
-            <img src="img/piggy.png" class="img-fluid purple" alt="piggy bank graphic" />
+            <img src="img/piggy.png" class="img-fluid deep-purple" alt="piggy bank graphic" />
           </div>
 
           <div class="flex-center col-sm-12 col-md-7 col-md-offset-2">
@@ -224,7 +229,7 @@
           <h1>Wants Bank</h1>
           <h3 class="center-text" ng-model="wantText">{{wantText}}</h3>
           <div class="flex-center col-sm-12 col-md-3">
-            <img src="img/piggy.png" class="img-fluid blue" alt="piggy bank graphic" />
+            <img src="img/piggy.png" class="img-fluid indigo" alt="piggy bank graphic" />
           </div>
 
           <div class="flex-center col-sm-12 col-md-7 col-md-offset-2">
@@ -268,120 +273,109 @@
       </div>
     </section>
 
-    <section id="login">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12 col-md-3">
 
-          </div>
-          <div class="col-sm-12 col-md-6">
+      <!-- Modal Login -->
+      <div class="modal fade modal-ext" id="modal-login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <!--Content-->
+          <div class="modal-content">
 
-          <!--Form with header-->
-          <div class="card">
-              <div class="card-block">
-
-                  <!--Header-->
-                  <div class="form-header">
-                      <h3 class="center-text">Login</h3>
-                  </div>
-
-                  <!--Body-->
-                  <div class="md-form">
-                      <i class="fa fa-envelope prefix"></i>
-                      <input type="text" id="form2" class="form-control">
-                      <label for="form2">Your email</label>
-                  </div>
-
-                  <div class="md-form">
-                      <i class="fa fa-lock prefix"></i>
-                      <input type="password" id="form4" class="form-control">
-                      <label for="form4">Your password</label>
-                  </div>
-
-                  <div class="text-xs-center">
-                      <button class="btn btn-deep-purple">Login</button>
-                  </div>
-
-              </div>
-
-              <!--Footer-->
-              <div class="modal-footer">
-                  <div class="options">
-                      <p>Not a member? <a href="#">Sign Up</a></p>
-                      <p>Forgot <a href="#">Password?</a></p>
-                  </div>
-              </div>
-
-          </div>
-          <!--/Form with header-->
-        </div>
-        </div>
-      </div>
-
-    </section>
-
-
-    <section id="setup">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12 col-md-3">
-
-          </div>
-          <div class="col-sm-12 col-md-6">
-            <!--Form with header-->
-            <div class="card">
-                <div class="card-block">
-
-                    <!--Header-->
-                    <div class="form-header">
-                        <h3 class="center-text">Set Up Child's Banks</h3>
-                    </div>
-
-                    <!--Body-->
-                    <div class="md-form">
-                        <i class="fa fa-user prefix"></i>
-                        <input type="text" id="childName" class="form-control">
-                        <label for="childName">Child's name</label>
-                    </div>
-
-                    <div class="md-form">
-                        <i class="fa fa-lock prefix"></i>
-                        <input type="password" id="childPassword" class="form-control">
-                        <label for="childPassword">Child's password</label>
-                    </div>
-                    <div class="">
-                      <h4 class="center-text">Allocate Amounts - must add up to 100%</h4>
-                    </div>
-
-                    <div class="md-form">
-                        <i class="fa fa-percent prefix"></i>
-                        <input type="number" id="dreamPercent" class="form-control">
-                        <label for="dreamPercent">Percent to allocate to Dream Bank</label>
-                    </div>
-                    <div class="md-form">
-                        <i class="fa fa-percent prefix"></i>
-                        <input type="number" id="goalPercent" class="form-control">
-                        <label for="goalPercent">Percent to allocate to Goal Bank</label>
-                    </div>
-                    <div class="md-form">
-                        <i class="fa fa-percent prefix"></i>
-                        <input type="number" id="wantPercent" class="form-control">
-                        <label for="wantPercent">Percent to allocate to Want Bank</label>
-                    </div>
-
-                    <div class="text-xs-center">
-                        <button class="btn btn-deep-purple">Start Banks</button>
-                    </div>
-
-                </div>
+            <!--Header-->
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h3><i class="fa fa-user"></i> Login</h3>
             </div>
-            <!--/Form with header-->
+
+            <!--Body-->
+            <div class="modal-body">
+              <div class="md-form">
+                  <i class="fa fa-envelope prefix"></i>
+                  <input type="text" id="form2" class="form-control">
+                  <label for="form2">Your email</label>
+              </div>
+
+              <div class="md-form">
+                  <i class="fa fa-lock prefix"></i>
+                  <input type="password" id="form3" class="form-control">
+                  <label for="form3">Your password</label>
+              </div>
+              <div class="text-xs-center">
+                  <button class="btn btn-primary btn-lg">Login</button>
+              </div>
+            </div>
+
+            <!--Footer-->
+            <div class="modal-footer">
+              <div class="options">
+                  <p>Not a member? <a href="#">Sign Up</a></p>
+                  <p>Forgot <a href="#">Password?</a></p>
+              </div>
+            </div>
           </div>
+            <!--/.Content-->
         </div>
       </div>
 
 
-    </section>
+
+
+        <!-- Modal Register -->
+        <div class="modal fade modal-ext" id="modal-register" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <!--Content-->
+                <div class="modal-content">
+                    <!--Header-->
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h3 class="center-text">Set Up Child's Banks</h3>
+
+                    </div>
+                    <!--Body-->
+                    <div class="modal-body">
+                      <div class="md-form">
+                          <i class="fa fa-user prefix"></i>
+                          <input type="text" id="childName" class="form-control">
+                          <label for="childName">Child's name</label>
+                      </div>
+
+                      <div class="md-form">
+                          <i class="fa fa-lock prefix"></i>
+                          <input type="password" id="childPassword" class="form-control">
+                          <label for="childPassword">Child's password</label>
+                      </div>
+                      <div class="">
+                        <h4 class="center-text">Allocate Amounts - must add up to 100%</h4>
+                      </div>
+
+                      <div class="md-form">
+                          <i class="fa fa-percent prefix"></i>
+                          <input type="number" id="dreamPercent" class="form-control">
+                          <label for="dreamPercent">Percent to allocate to Dream Bank</label>
+                      </div>
+                      <div class="md-form">
+                          <i class="fa fa-percent prefix"></i>
+                          <input type="number" id="goalPercent" class="form-control">
+                          <label for="goalPercent">Percent to allocate to Goal Bank</label>
+                      </div>
+                      <div class="md-form">
+                          <i class="fa fa-percent prefix"></i>
+                          <input type="number" id="wantPercent" class="form-control">
+                          <label for="wantPercent">Percent to allocate to Want Bank</label>
+                      </div>
+
+                      <div class="text-xs-center">
+                          <button class="btn btn-deep-purple">Start Banks</button>
+                      </div>
+                    </div>
+                </div>
+                <!--/.Content-->
+            </div>
+        </div>
+
 
 
     <section id="about">
